@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+/* Base */
+:root {
+  --clr-primary: rgb(41, 163, 150);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+#topic{
+  color: #29a396;
+  a{
+    color: rgb(255, 255, 255);
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(#111, #071a1a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.header,
+.section {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.header::after,
+.header::before,
+.section::after,
+.section::before {
+  content: "";
+  background: url('https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png');
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+}
+
+.header::after {
+  left: -200px;
+}
+
+.header::before {
+  right: -200px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.section {
+  background: #1d1f1e;
+  position: relative;
+  padding: 80px 0;
+}
+
+.section::after {
+  left: -200px;
+}
+
+.section::before {
+  width: 600px;
+  right: -200px;
+}
+
+.section:nth-child(even) {
+  background: #141615;
+}
+
+.section:nth-child(even)::after,
+.section:nth-child(even)::before {
+  display: none;
+}
+
+.primary {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.secondary {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.tertiary {
+  font-size: 15px;
+}
+/* End Base */
+
+/* Menu */
+.menu {
+  width: 100%;
+  background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
+  padding: 12px 0;
+}
+
+.menu .container {
+  justify-content: space-between;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-item:hover a {
+  color: #29a396;
+  transition: 0.3s linear;
+}
+
+.nav-item:last-of-type {
+  margin-right: 0;
+}
+/* End Menu */
+
+/* Buttons */
+.btn {
+  padding: 10px 28px;
+  background: var(--clr-primary);
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #165f56;
+  transition: 0.3s linear;
+}
+
+.btn-2 {
+  font-size: 35px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s linear;
+}
+
+.btn-2:hover {
+  color: #29a396;
+}
+
+/* End Buttons */
+
+.Header 
+.text {
+  width: 60%;
+}
+
+.visual {
+  width: 40%;
+}
+
+.visual img {
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.header h1 span {
+  color: var(--clr-primary);
+}
+/* End Header */
+
+
+#discount {
+  padding: 40px 0;
+}
+
+
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-btn {
+    display: block;
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+
+  .menu.active .nav-item {
+    display: block;
+    margin: 30px 0;
+  }
+
+  .nav,
+  .menu .btn {
+    display: none;
+  }
+
+  .menu.active .nav,
+  .menu.active .btn {
+    display: block;
+  }
+
+  .menu.active {
+    padding: 30px 0;
+    width: 100%;
+    transition: all 0.8s ease;
+  }
+
+  .text,
+  .visual {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text h1 {
+    font-size: 45px;
+  }
+
+  .primary {
+    font-size: 28px;
+  }
+
+  .secondary {
+    font-size: 22px;
+  }
+
+  .tertiary {
+    font-size: 14px;
+  }
+
+  .trainer {
+    margin-bottom: 20px;
+  }
+
+  .client {
+    margin-bottom: 50px;
+  }
+
+  #discount .visual img {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .header::after,
+  .header::before,
+  .section::after,
+  .section::before {
+    display: none;
+  }
+
+  .primary {
+    font-size: 25px;
+  }
+
+  .secondary {
+    font-size: 20px;
+  }
+
+  .tertiary {
+    font-size: 12px;
+  }
+
+  .text h1 {
+    font-size: 34px;
+  }
+
+  .btn,
+  .btn-2 {
+    font-size: 16px;
+  }
+}
+
+
+footer {
+  
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+h3{
+  text-align: center;
+  font-size: 2em;
+}
+textarea {
+  resize: none;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+white-space: nowrap;
+}
+
+@charset "UTF-8";
+
+.svg-inline--fa {
+vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+display: inline-block;
+position: relative;
+cursor: pointer;
+width: 3.125rem;
+height: 3.125rem;
+border: 0.125rem solid transparent;
+padding: 0;
+text-decoration: none;
+text-align: center;
+color: #fefefe;
+font-size: 1.5625rem;
+font-weight: normal;
+line-height: 2em;
+border-radius: 1.6875rem;
+transition: all 0.5s ease;
+margin-right: 0.25rem;
+margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+-webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
+font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+color: #3b5998;
+background: #fefefe;
+border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+color: #55acee;
+background: #fefefe;
+border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+color: #007bb5;
+background: #fefefe;
+border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+background: #000000;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+color: #000000;
+background: #fefefe;
+border-color: #000000;
+}
+
+.rounded-social-buttons .social-button.youtube {
+background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+color: #bb0000;
+background: #fefefe;
+border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+color: #125688;
+background: #fefefe;
+border-color: #125688;
+}
